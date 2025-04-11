@@ -1,5 +1,6 @@
 name: Terraform-workaround
 on: push  
+path: Terraform/.github/workflows/forterraform.yaml
 jobs:
     terraform:
     runs-on: ubuntu-latest
