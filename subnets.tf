@@ -1,6 +1,25 @@
 provider "aws" {
   region = "us-east-1"  
+  access_key = var.access_key
+  secret_key = var.secret_key
 }
+
+terraform {
+  backend "s3" {
+    bucket = "forterraform1503"
+    key    = "terraform/terraform.tfstate"
+    region = "us-east-1"
+    access_key = var.access_key
+    secret_key = var.secret_key
+    )
+
+    variable "access_key" {
+      type = string
+      
+    }
+    variable "secrets_key"
+      type = string
+    }
 
 resource "aws_vpc" "main_vpc" {
   cidr_block = "10.0.0.0/16"
