@@ -7,10 +7,10 @@ provider "aws" {
 terraform {
   backend "s3" {
     bucket     = "forterraform1503"
-    key        = "terraform/terraform.tfstate"
+    key        = "terraform.tfstate"
     region     = "us-east-1"
-    access_key = var.access_key
-    secret_key = var.secret_key
+    access_key = "${var.access_key}"
+    secret_key = "${var.secret_key}"
   }
 }
 
