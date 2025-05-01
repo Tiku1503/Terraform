@@ -1,8 +1,5 @@
 name: Terraform-workaround
-on:
-  pull_request:
-    branches:
-      - main
+on: push
 jobs:
   terraform:
     runs-on: ubuntu-latest
