@@ -11,6 +11,9 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.1.7
+          
+      - name: Sync Repository
+        run: git pull origin main
 
       - name: Terraform Initialize
         run: terraform init -backend-config="access_key=${{ secrets.AWS_ACCESS_KEY }}" -backend-config="secret_key=${{ secrets.AWS_SECRET_KEY }}"
