@@ -1,4 +1,4 @@
-name: Terraform-workaround1
+name: Terraform-workaround
 on: push
 jobs:
   terraform:
