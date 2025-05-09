@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2 
 
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v3
@@ -13,4 +13,8 @@ jobs:
           terraform_version: 1.1.7
 
       - name: Terraform Initialize
+<<<<<<< HEAD
         run: terraform init -backend-config="access_key=${{ secrets.AWS_ACCESS_KEY }}" -backend-config="secret_key=${{ secrets.AWS_SECRET_KEY }}"
+=======
+        run: terraform init -backend-config="access_key=${{ secrets.AWS_ACCESS_KEY }}" -backend-config="secret_key=${{ secrets.AWS_SECRET_KEY }}"
+>>>>>>> cee84b9f2e4507f0b4bcf350ea3dbc9c3f7ae191
