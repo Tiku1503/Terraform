@@ -1,6 +1,27 @@
 provider "aws" {
   region     = "us-east-1"
+  access_key = var.access_key
+  secret_key = var.secret_key
 }
+
+terraform {
+  backend "s3" {
+    bucket         = "forterraform1503"
+    key            = "terraform/terraform.tfstate"
+    region         = "us-east-2"
+    access_key = "var.access_key"
+    secret_key = "var.secret_key"
+    
+  }
+}
+variable "access_key" {
+  type        = string
+}
+
+variable "secret_key" {
+  type        = string
+}
+
 
 resource "aws_internet_gateway" "main_igw" {
   vpc_id = aws_vpc.main_vpc.id
